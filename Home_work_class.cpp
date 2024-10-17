@@ -131,6 +131,8 @@ public:
 	int doors;
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 
+	//__________________________________
+
 	void Car_color()
 	{
 		SetConsoleTextAttribute(h, 2);
@@ -184,6 +186,7 @@ public:
 	bool automatic;
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 
+	//__________________________________
 
 	void Kettle_color()
 	{
@@ -239,6 +242,8 @@ public:
 	bool cover;
 	float price;
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+
+	//__________________________________
 
 	void Book_title()
 	{
