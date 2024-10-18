@@ -186,7 +186,11 @@ public:
 
 	void set_width(int w)
 	{
-		width = w;
+		if (w >= 100 && w<=250) width = w;
+		else throw "Ожидается целое число в диапазоне от 1 до 250 включительно.\n";
+		{
+
+		}
 	}
 	int get_width() const
 	{
