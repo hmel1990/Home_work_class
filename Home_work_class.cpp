@@ -188,9 +188,6 @@ public:
 	{
 		if (w >= 100 && w<=250) width = w;
 		else throw "Ожидается целое число в диапазоне от 1 до 250 включительно.\n";
-		{
-
-		}
 	}
 	int get_width() const
 	{
@@ -199,7 +196,8 @@ public:
 
 	void set_height(int h)
 	{
-		height = h;
+		if (h >= 100 && h <= 150) height = h;
+		else throw "Ожидается целое число в диапазоне от 100 до 150 включительно.\n";
 	}
 	int get_height() const
 	{
@@ -208,7 +206,7 @@ public:
 
 	void set_shelf(bool c)
 	{
-		shelf = c;
+		if (c == true || c==false) shelf = c;
 	}
 	bool get_shelf() const
 	{
@@ -286,7 +284,8 @@ public:
 
 	void set_speed(int s)
 	{
-		speed = s;
+		if (s >= 1 && s >= 300) speed = s;
+		else throw "Ожидается целое число в диапазоне от 1 до 300 включительно.\n";
 	}
 	int get_speed() const
 	{
@@ -295,7 +294,7 @@ public:
 
 	void set_electric(bool e)
 	{
-		electric = e;
+		if (e == true || e == false) electric = e;
 	}
 	bool get_electric() const
 	{
@@ -303,8 +302,10 @@ public:
 	}
 
 	void set_doors(int d)
+
 	{
-		doors = d;
+		if (d >= 2 && d <= 5) doors = d;
+		else throw "Ожидается целое число в диапазоне от 1 до 5 включительно.\n";		
 	}
 	int get_doors() const
 	{
@@ -382,7 +383,8 @@ public:
 
 	void set_capacity(int cap)
 	{
-		capacity = cap;
+		if (cap >= 1 && cap <= 2) capacity = cap;
+		else throw "Объем должен быть от 1 до 2 включительно\n";
 	}
 	int get_capacity() const
 	{
@@ -391,7 +393,8 @@ public:
 
 	void set_power(int p)
 	{
-		power = p;
+		if (p >= 1000 && p <= 3000) power = p;
+		else throw "Мощность должна быть от 1000 до 3000 Вт включительно\n";
 	}
 	int get_power() const
 	{
@@ -400,7 +403,8 @@ public:
 
 	void set_automatic(bool a)
 	{
-		automatic = a;
+		if (a == true || a == false) automatic = a;
+		else throw "Invalid value for automatic mode. Must be true or false.\n";
 	}
 	bool get_automatic() const
 	{
@@ -479,7 +483,8 @@ public:
 
 	void set_pages(int p)
 	{
-		pages = p;
+		if (p > 0) pages = p;
+		else throw "Количество страниц должно быть больше 0\n";
 	}
 	int get_pages() const
 	{
@@ -488,7 +493,8 @@ public:
 
 	void set_cover(bool c)
 	{
-		cover = c;
+		if (c == true || c == false) cover = c;
+		else throw;
 	}
 	bool get_cover() const
 	{
@@ -497,7 +503,8 @@ public:
 
 	void set_price(float p)
 	{
-		price = p;
+		if (p >= 0) price = p;
+		else throw "Цена книги должна быть больше 0\n";
 	}
 	float get_price() const
 	{
