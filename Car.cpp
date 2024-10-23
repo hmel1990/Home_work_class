@@ -39,27 +39,27 @@
 		SetConsoleTextAttribute(h, 15);
 	}
 	//__________________________________
-	void Car::set_color(string c)
+	void Car::set_color(string color)
 	{
-		color = c;
+		this->color = color;
 	}
 	string Car::get_color() const
 	{
 		return color;
 	}
 
-	void Car::set_brand(string b)
+	void Car::set_brand(string brand)
 	{
-		brand = b;
+		this->brand = brand;
 	}
 	string Car::get_brand() const
 	{
 		return brand;
 	}
 
-	void Car::set_speed(int s)
+	void Car::set_speed(int speed)
 	{
-		if (s >= 1 && s <= 300) speed = s;
+		if (speed >= 1 && speed <= 300) this->speed = speed;
 		else throw "ќжидаетс€ целое число в диапазоне от 1 до 300 включительно.\n";
 	}
 	int Car::get_speed() const
@@ -67,19 +67,19 @@
 		return speed;
 	}
 
-	void Car::set_electric(bool e)
+	void Car::set_electric(bool electric)
 	{
-		if (e == true || e == false) electric = e;
+		if (electric == true || electric == false) this->electric = electric;
 	}
 	bool Car::get_electric() const
 	{
 		return electric;
 	}
 
-	void Car::set_doors(int d)
+	void Car::set_doors(int doors)
 
 	{
-		if (d >= 2 && d <= 5) doors = d;
+		if (doors >= 2 && doors <= 5) this->doors = doors;
 		else throw "ќжидаетс€ целое число в диапазоне от 1 до 5 включительно.\n";
 	}
 	int Car::get_doors() const

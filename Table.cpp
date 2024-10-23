@@ -40,27 +40,27 @@ void Table::is_table_shelf()
 
 }
 //__________________________________
-void Table::set_color(string c)
+void Table::set_color(string color)
 {
-	color = c;
+	this->color = color;
 }
 string Table::get_color() const
 {
 	return color;
 }
 
-void Table::set_material(string m)
+void Table::set_material(string material)
 {
-	material = m;
+	this->material = material;
 }
 string Table::get_material() const
 {
 	return material;
 }
 
-void Table::set_width(int w)
+void Table::set_width(int width)
 {
-	if (w >= 100 && w <= 250) width = w;
+	if (width >= 100 && width <= 250) this->width = width;
 	else throw "ќжидаетс€ целое число в диапазоне от 1 до 250 включительно.\n";
 }
 int Table::get_width() const
@@ -68,9 +68,9 @@ int Table::get_width() const
 	return width;
 }
 
-void Table::set_height(int h)
+void Table::set_height(int height)
 {
-	if (h >= 100 && h <= 150) height = h;
+	if (height >= 100 && height <= 150) this->height = height;
 	else throw "ќжидаетс€ целое число в диапазоне от 100 до 150 включительно.\n";
 }
 int Table::get_height() const
@@ -78,9 +78,9 @@ int Table::get_height() const
 	return height;
 }
 
-void Table::set_shelf(bool c)
+void Table::set_shelf(bool shelf)
 {
-	if (c == true || c == false) shelf = c;
+	if (shelf == true || shelf == false) this->shelf = shelf;
 }
 bool Table::get_shelf() const
 {

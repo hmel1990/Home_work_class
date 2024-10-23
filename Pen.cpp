@@ -48,27 +48,27 @@ void Pen::is_pen_full()
 
 }
 //__________________________________
-void Pen::set_color(string c)
+void Pen::set_color(string color)
 {
-	color = c;
+	this->color = color;
 }
 string Pen::get_color() const
 {
 	return color;
 }
 
-void Pen::set_material(string m)
+void Pen::set_material(string material)
 {
-	material = m;
+	this->material = material;
 }
 string Pen::get_material() const
 {
 	return material;
 }
 
-void Pen::set_size(double s)
+void Pen::set_size(double material)
 {
-	if (s >= 1 && s <= 300) material = s;
+	if (material >= 1 && material <= 300) this->material = material;
 	else throw "ќжидаетс€ целое число в диапазоне от 1 до 300 включительно.\n";
 }
 double Pen::get_size() const
@@ -76,9 +76,9 @@ double Pen::get_size() const
 	return size;
 }
 
-void Pen::set_cap(bool c)
+void Pen::set_cap(bool cap)
 {
-	if (c == true || c == false) cap = c;
+	if (cap == true || cap == false) this->cap = cap;
 	else throw "ќжидаетс€ true or false";
 }
 bool Pen::get_cap() const
@@ -86,11 +86,11 @@ bool Pen::get_cap() const
 	return cap;
 }
 
-void Pen::set_fullness(unsigned int f)
+void Pen::set_fullness(unsigned int fullness)
 {
-	if (f >= 0 && f <= 100)
+	if (fullness >= 0 && fullness <= 100)
 	{
-		fullness = f;
+		this->fullness = fullness;
 	}
 	else
 	{

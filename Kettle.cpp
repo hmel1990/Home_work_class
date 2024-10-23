@@ -37,27 +37,27 @@
 		SetConsoleTextAttribute(h, 15);
 	}
 	//__________________________________
-	void Kettle::set_color(string c)
+	void Kettle::set_color(string color)
 	{
-		color = c;
+		this->color = color;
 	}
 	string Kettle::get_color() const
 	{
 		return color;
 	}
 
-	void Kettle::set_brand(string b)
+	void Kettle::set_brand(string brand)
 	{
-		brand = b;
+		this->brand = brand;
 	}
 	string Kettle::get_brand() const
 	{
 		return brand;
 	}
 
-	void Kettle::set_capacity(int cap)
+	void Kettle::set_capacity(int capacity)
 	{
-		if (cap >= 1 && cap <= 2) capacity = cap;
+		if (capacity >= 1 && capacity <= 2) this->capacity = capacity;
 		else throw "Объем должен быть от 1 до 2 включительно\n";
 	}
 	int Kettle::get_capacity() const
@@ -65,9 +65,9 @@
 		return capacity;
 	}
 
-	void Kettle::set_power(int p)
+	void Kettle::set_power(int power)
 	{
-		if (p >= 1000 && p <= 3000) power = p;
+		if (power >= 1000 && power <= 3000) this->power = power;
 		else throw "Мощность должна быть от 1000 до 3000 Вт включительно\n";
 	}
 	int Kettle::get_power() const
@@ -75,9 +75,9 @@
 		return power;
 	}
 
-	void Kettle::set_automatic(bool a)
+	void Kettle::set_automatic(bool automatic)
 	{
-		if (a == true || a == false) automatic = a;
+		if (automatic == true || automatic == false) this->automatic = automatic;
 		else throw "Invalid value for automatic mode. Must be true or false.\n";
 	}
 	bool Kettle::get_automatic() const

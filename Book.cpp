@@ -38,27 +38,27 @@
 	}
 	//__________________________________
 
-	void Book::set_title(string t)
+	void Book::set_title(string title)
 	{
-		title = t;
+		this->title = title;
 	}
 	string Book::get_title() const
 	{
 		return title;
 	}
 
-	void Book::set_author(string a)
+	void Book::set_author(string author)
 	{
-		author = a;
+		this->author = author;
 	}
 	string Book::get_author() const
 	{
 		return author;
 	}
 
-	void Book::set_pages(int p)
+	void Book::set_pages(int pages)
 	{
-		if (p > 0) pages = p;
+		if (pages > 0) this->pages = pages;
 		else throw "Количество страниц должно быть больше 0\n";
 	}
 	int Book::get_pages() const
@@ -66,9 +66,9 @@
 		return pages;
 	}
 
-	void Book::set_cover(bool c)
+	void Book::set_cover(bool cover)
 	{
-		if (c == true || c == false) cover = c;
+		if (cover == true || cover == false) this->cover = cover;
 		else throw;
 	}
 	bool Book::get_cover() const
@@ -76,9 +76,9 @@
 		return cover;
 	}
 
-	void Book::set_price(float p)
+	void Book::set_price(float price)
 	{
-		if (p >= 0) price = p;
+		if (price >= 0) this->price = price;
 		else throw "Цена книги должна быть больше 0\n";
 	}
 	float Book::get_price() const
