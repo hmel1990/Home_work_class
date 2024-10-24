@@ -47,7 +47,7 @@
 		mileage += 10;
 	}
 
-	void Car::Print()
+	void Car::print()
 	{
 		SetConsoleTextAttribute(h, 2);
 		cout << "Car has " << fuel << " liters of fuel in tank\n";

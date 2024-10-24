@@ -26,10 +26,8 @@ int main()
 	while (car.get_mileage() < 100000 && car.get_fuel() > 0)
 	{
 		car.lets_go();
-		car.Print();
+		car.print();
 		Sleep (500);
 	}
 	car.car_to_go();
-
-
 }

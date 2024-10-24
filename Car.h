@@ -21,7 +21,7 @@ public:
 	void doors_number();
 	//__________________________________
 	void lets_go();
-	void Print();
+	void print();
 	void car_to_go();
 
 	//__________________________________
