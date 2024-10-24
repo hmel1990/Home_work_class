@@ -9,6 +9,8 @@ class Car
 	int speed;
 	bool electric;
 	int doors;
+	int fuel;
+	int mileage;
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 	//__________________________________
 public:
@@ -17,6 +19,11 @@ public:
 	void car_speed();
 	void is_electric();
 	void doors_number();
+	//__________________________________
+	void lets_go();
+	void Print();
+	void car_to_go();
+
 	//__________________________________
 	void set_color(string c);
 	string get_color() const;
@@ -28,5 +35,9 @@ public:
 	bool get_electric() const;
 	void set_doors(int d);
 	int get_doors() const;
+	void set_fuel(int fuel);
+	int get_fuel() const;
+	void set_mileage(int fuel);
+	int get_mileage() const;
 };
 
