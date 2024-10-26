@@ -27,5 +27,8 @@ public:
 	bool get_cap() const;
 	void set_fullness(unsigned int f);
 	unsigned int get_fullness() const;
+	void print()const;
+
+	Pen();
 };
 

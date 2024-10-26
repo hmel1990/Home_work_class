@@ -101,3 +101,16 @@ unsigned int Pen:: get_fullness() const
 {
 	return fullness;
 }
+
+Pen::Pen() 
+{
+	set_color("blue");
+	set_material("plastic");
+	set_cap(true);
+	set_size(160);
+	set_fullness(50);
+}
+
+void Pen::print() const{
+	cout << this-> color << "\n" << this-> material << "\n" << this-> cap << "\n" << this-> size << "\n" << this-> fullness << "\n";
+}
