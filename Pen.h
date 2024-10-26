@@ -27,8 +27,10 @@ public:
 	bool get_cap() const;
 	void set_fullness(unsigned int f);
 	unsigned int get_fullness() const;
-	void print()const;
 
-	Pen();
+	void print() const;
+	
+
+	Pen (string a = "green", string b = "plastic", double c = 160, bool d = true, unsigned int e = 50);
 };
 

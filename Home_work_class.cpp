@@ -9,29 +9,8 @@ using namespace std;
 
 int main()
 {
-
-	cout << "\n\n";
-	cout << "class Car\n";
-	Car car;
-	car.set_color("red");
-	car.set_brand("Toyota");
-	car.set_speed(180);
-	car.set_electric(false);
-	car.set_doors(4);
-	car.set_fuel(10);
-	car.set_mileage(20000);
-
-
-	
-	//while (car.get_mileage() < 100000 && car.get_fuel() > 0)
-	//{
-	//	car.lets_go();
-	//	car.print();
-	//	Sleep (500);
-	//}
-	car.car_to_go();
-
-	Pen pen;
-	pen.print();
-
+	Pen a;
+	a.print();
+	Pen b("red");
+	b.print();
 }

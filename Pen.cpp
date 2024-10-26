@@ -66,9 +66,9 @@ string Pen::get_material() const
 	return material;
 }
 
-void Pen::set_size(double material)
+void Pen::set_size(double size)
 {
-	if (material >= 1 && material <= 300) this->material = material;
+	if (size >= 1 && size <= 300) this->size = size;
 	else throw "ќжидаетс€ целое число в диапазоне от 1 до 300 включительно.\n";
 }
 double Pen::get_size() const
@@ -102,15 +102,19 @@ unsigned int Pen:: get_fullness() const
 	return fullness;
 }
 
-Pen::Pen() 
+
+Pen::Pen (string a, string b, double c, bool d, unsigned int e)
 {
-	set_color("blue");
-	set_material("plastic");
-	set_cap(true);
-	set_size(160);
-	set_fullness(50);
+	set_color(a);
+	set_material(b);
+	set_size(c);
+	set_cap(d);
+	set_fullness(e);
 }
 
-void Pen::print() const{
+
+
+void Pen::print() const
+{
 	cout << this-> color << "\n" << this-> material << "\n" << this-> cap << "\n" << this-> size << "\n" << this-> fullness << "\n";
 }
