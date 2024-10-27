@@ -30,5 +30,11 @@ public:
 	int get_power() const;
 	void set_automatic(bool a);
 	bool get_automatic() const;
+
+	void print() const;
+
+	Kettle();
+
+	Kettle(string a, string b, int c, int d, bool e);
 };
 

@@ -47,7 +47,7 @@
 		mileage += 10;
 	}
 
-	void Car::print()
+	void Car::print_1()
 	{
 		SetConsoleTextAttribute(h, 2);
 		cout << "Car has " << fuel << " liters of fuel in tank\n";
@@ -129,4 +129,25 @@
 	int Car::get_fuel() const
 	{
 		return fuel;
+	}
+
+
+	Car::Car() :Car("white", "audi", 200, true, 4, 70, 20000) {}
+
+	Car::Car(string a, string b, int c, bool d, int e, int f, int g)
+	{
+		set_color(a);
+		set_brand(b);
+		set_speed(c);
+		set_electric(d);
+		set_doors(e);
+		set_fuel(f);
+		set_mileage(g);
+	}
+
+
+
+	void Car::print() const
+	{
+		cout << this->color << "\n" << this->brand << "\n" << this->speed << "\n" << this->electric << "\n" << this->doors << "\n" << this->fuel << "\n" << this->mileage << "\n";
 	}

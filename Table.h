@@ -28,4 +28,10 @@ public:
 	int get_height() const;
 	void set_shelf(bool c);
 	bool get_shelf() const;
+
+	void print() const;
+
+	Table();
+
+	Table(string a, string b, int c, int d, bool e);
 };

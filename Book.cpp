@@ -85,3 +85,21 @@
 	{
 		return price;
 	}
+
+	Book::Book() :Book("1984", "George Orwell", 150, true, 9.99) {}
+
+	Book::Book(string a, string b, int c, bool d, float e)
+	{
+		set_title(a);
+		set_author(b);
+		set_pages(c);
+		set_cover(d);
+		set_price(e);
+	}
+
+
+
+	void Book::print() const
+	{
+		cout << this->title << "\n" << this->author << "\n" << this->pages << "\n" << this->cover << "\n" << this->price << "\n";
+	}

@@ -31,6 +31,12 @@ public:
 	bool get_cover() const;
 	void set_price(float p);
 	float get_price() const;
+
+	void print() const;
+
+	Book();
+
+	Book(string a, string b, int c, bool d, float e);
 };
 
 

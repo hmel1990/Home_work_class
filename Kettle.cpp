@@ -84,3 +84,21 @@
 	{
 		return automatic;
 	}
+
+	Kettle::Kettle() :Kettle("gray", "Tefal", 1, 1500,true) {}
+
+	Kettle::Kettle(string a, string b, int c, int d, bool e)
+	{
+		set_color(a);
+		set_brand(b);
+		set_capacity(c);
+		set_power(d);
+		set_automatic(e);
+	}
+
+
+
+	void Kettle::print() const
+	{
+		cout << this->color << "\n" << this->brand << "\n" << this->capacity << "\n" << this->power << "\n" << this->automatic << "\n";
+	}

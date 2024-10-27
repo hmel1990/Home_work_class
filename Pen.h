@@ -30,7 +30,9 @@ public:
 
 	void print() const;
 	
+	Pen();
 
-	Pen (string a = "green", string b = "plastic", double c = 160, bool d = true, unsigned int e = 50);
+	Pen(string a, string b, double c, bool d, unsigned int e);
+	//Pen (string a = "green", string b = "plastic", double c = 160, bool d = true, unsigned int e = 50);
 };
 

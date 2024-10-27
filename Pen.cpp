@@ -102,6 +102,7 @@ unsigned int Pen:: get_fullness() const
 	return fullness;
 }
 
+Pen::Pen():Pen ("green","plastic", 160, true, 50){}
 
 Pen::Pen (string a, string b, double c, bool d, unsigned int e)
 {

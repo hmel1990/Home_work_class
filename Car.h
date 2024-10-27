@@ -21,7 +21,7 @@ public:
 	void doors_number();
 	//__________________________________
 	void lets_go();
-	void print();
+	void print_1();
 	void car_to_go();
 
 	//__________________________________
@@ -39,5 +39,13 @@ public:
 	int get_fuel() const;
 	void set_mileage(int fuel);
 	int get_mileage() const;
+
+
+	void print() const;
+
+	Car();
+
+	Car(string a, string b, int c, bool d, int e, int f, int g);
+
 };
 

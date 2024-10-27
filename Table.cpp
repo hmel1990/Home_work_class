@@ -86,3 +86,19 @@ bool Table::get_shelf() const
 {
 	return shelf;
 }
+
+Table::Table() :Table("brown", "wood", 160, 100, true) {}
+
+Table::Table(string a, string b, int c, int d, bool e)
+{
+	set_color(a);
+	set_material(b);
+	set_width(c);
+	set_height(d);
+	set_shelf(e);
+}
+
+void Table::print() const
+{
+	cout << this->color << "\n" << this->material << "\n" << this->width << "\n" << this->height << "\n" << this->shelf << "\n";
+}
