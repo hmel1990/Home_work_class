@@ -45,6 +45,18 @@ public:
 
 	Car();
 
+	Car(string a);
+
+	Car(string a, string b);
+
+	Car(string a, string b, int c);
+
+	Car(string a, string b, int c, bool d);
+
+	Car(string a, string b, int c, bool d, int e);
+
+	Car(string a, string b, int c, bool d, int e, int f);
+
 	Car(string a, string b, int c, bool d, int e, int f, int g);
 
 };

@@ -132,7 +132,21 @@
 	}
 
 
-	Car::Car() :Car("white", "audi", 200, true, 4, 70, 20000) {}
+	//Car::Car() :Car("white", "audi", 200, true, 4, 70, 20000) {}
+
+	Car::Car() :Car("white") {}
+
+	Car::Car(string a) :Car(a, "audi") {}
+
+	Car::Car(string a, string b) :Car(a, b, 200) {}
+
+	Car::Car(string a, string b, int c) :Car(a, b, c, true) {}
+
+	Car::Car(string a, string b, int c, bool d) :Car(a, b, c, d, 4) {}
+
+	Car::Car(string a, string b, int c, bool d, int e) :Car(a, b, c, d, e, 70) {}
+
+	Car::Car(string a, string b, int c, bool d, int e, int f):Car(a, b, c, d, e, f, 20000){}
 
 	Car::Car(string a, string b, int c, bool d, int e, int f, int g)
 	{

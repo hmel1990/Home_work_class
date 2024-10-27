@@ -38,11 +38,41 @@ int main()
 	g.print();
 	Book h("Lord of the rings", "J. R. R. Tolkien", 480, true, 1000000);
 	h.print();
+	cout << "\n";
 
+	HANDLE CCC = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleTextAttribute(CCC, 6);
 	cout << "Class Car\n";
+
 	Car i;
 	i.print();
-	Car j("white", "Porshe", 220, true, 5, 80, 30000);
+	cout << "\n";
+
+	Car j("black");
 	j.print();
+	cout << "\n";
+
+	Car l("black", "ferrari");
+	l.print();
+	cout << "\n";
+
+	Car m("yellow", "ZAZ", 100);
+	m.print();
+	cout << "\n";
+
+	Car n("gray", "ford", 110, false);
+	n.print();
+	cout << "\n";
+
+	Car o("red", "Lanos", 250, false, 4);
+	o.print();
+	cout << "\n";
+
+	Car p("green", "Toyota", 250, false, 4, 50);
+	p.print();
+	cout << "\n";
+
+	Car q("white", "Porshe", 220, true, 5, 80, 30000);
+	q.print();
 
 }
