@@ -73,14 +73,42 @@
 		return color;
 	}
 
-	void Car::set_brand(string brand)
+	void Car::set_brand(string *brand, int size)
+	{
+		if (this->brand != nullptr) delete[] this->brand;		
+		this->brand = new string[size];
+		for (int i = 0; i < size; i++)
+		{
+			this->brand[i] = brand[i];
+		}
+	}
+
+	string* Car::get_brand(int size)
+	{	
+		string* temp = new string[size];
+		for (int i = 0; i< size; i++)
+		{
+			temp [i] = this->brand[i];
+		}
+		return temp;
+	}
+	
+	void Car::print_brand()
+	{
+		for (size_t i = 0; this->brand[i] != ""; i++)
+		{
+			cout << this->brand[i];
+		}
+	}
+
+	/*void Car::set_brand(string brand)
 	{
 		this->brand = brand;
 	}
 	string Car::get_brand() const
 	{
 		return brand;
-	}
+	}*/
 
 	void Car::set_speed(int speed)
 	{
@@ -136,22 +164,22 @@
 
 	Car::Car() :Car("white") {}
 
-	Car::Car(string a) :Car(a, "audi") {}
+	Car::Car(string a) :Car(a, { "audi", "audi", "audi" }, 3) {}
 
-	Car::Car(string a, string b) :Car(a, b, 200) {}
+	Car::Car(string a, string* b, int b1) :Car(a, b, b1, 200) {}
 
-	Car::Car(string a, string b, int c) :Car(a, b, c, true) {}
+	Car::Car(string a, string* b, int b1, int c) :Car(a, b, b1, c, true) {}
 
-	Car::Car(string a, string b, int c, bool d) :Car(a, b, c, d, 4) {}
+	Car::Car(string a, string* b, int b1, int c, bool d) :Car(a, b, b1, c, d, 4) {}
 
-	Car::Car(string a, string b, int c, bool d, int e) :Car(a, b, c, d, e, 70) {}
+	Car::Car(string a, string* b, int b1, int c, bool d, int e) :Car(a, b, b1, c, d, e, 70) {}
 
-	Car::Car(string a, string b, int c, bool d, int e, int f):Car(a, b, c, d, e, f, 20000){}
+	Car::Car(string a, string* b, int b1, int c, bool d, int e, int f):Car(a, b,b1, c, d, e, f, 20000){}
 
-	Car::Car(string a, string b, int c, bool d, int e, int f, int g)
+	Car::Car(string a, string *b, int b1, int c, bool d, int e, int f, int g)
 	{
 		set_color(a);
-		set_brand(b);
+		set_brand(b,b1);
 		set_speed(c);
 		set_electric(d);
 		set_doors(e);
@@ -164,4 +192,10 @@
 	void Car::print() const
 	{
 		cout << this->color << "\n" << this->brand << "\n" << this->speed << "\n" << this->electric << "\n" << this->doors << "\n" << this->fuel << "\n" << this->mileage << "\n";
+	}
+
+
+	Car::~Car()
+	{
+		if (brand != nullptr) delete[] brand;
 	}

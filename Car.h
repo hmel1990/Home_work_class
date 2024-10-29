@@ -1,11 +1,13 @@
 #include <iostream>
 #include <windows.h>
+#include <cstring>
+
 using namespace std;
 
 class Car
 {
 	string color;
-	string brand;
+	string* brand = nullptr;
 	int speed;
 	bool electric;
 	int doors;
@@ -27,8 +29,8 @@ public:
 	//__________________________________
 	void set_color(string c);
 	string get_color() const;
-	void set_brand(string b);
-	string get_brand() const;
+	void set_brand(string* brand, int size);
+	string* get_brand(int size);
 	void set_speed(int s);
 	int get_speed() const;
 	void set_electric(bool e);
@@ -47,17 +49,21 @@ public:
 
 	Car(string a);
 
-	Car(string a, string b);
+	Car(string a, string* b, int b1);
 
-	Car(string a, string b, int c);
+	Car(string a, string* b, int b1, int c);
 
-	Car(string a, string b, int c, bool d);
+	Car(string a, string* b, int b1, int c, bool d);
 
-	Car(string a, string b, int c, bool d, int e);
+	Car(string a, string* b, int b1, int c, bool d, int e);
 
-	Car(string a, string b, int c, bool d, int e, int f);
+	Car(string a, string* b, int b1, int c, bool d, int e, int f);
 
-	Car(string a, string b, int c, bool d, int e, int f, int g);
+	Car(string a, string* b, int b1, int c, bool d, int e, int f, int g);
+
+	void print_brand();
+
+	~Car();
 
 };
 

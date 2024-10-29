@@ -57,8 +57,12 @@ int main()
 	HANDLE CCC = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleTextAttribute(CCC, 6);
 	cout << "Class Car\n";
-
 	Car i;
+	string arr [] = { "Toyota", "Honda", "Ford" };
+	i.set_brand(arr,3);
+	i.print_brand();
+
+	/*Car i;
 	i.print();
 	cout << "\n";
 
@@ -87,6 +91,6 @@ int main()
 	cout << "\n";
 
 	Car q("white", "Porshe", 220, true, 5, 80, 30000);
-	q.print();
+	q.print();*/
 
 }
