@@ -1,10 +1,12 @@
 #include <iostream>
 #include <windows.h>
+#include <cstring>
+
 using namespace std;
 
 class Kettle
 {
-	string color;
+	char * color = nullptr;
 	string brand;
 	int capacity;
 	int power;
@@ -20,7 +22,7 @@ public:
 	void kettle_power();
 	void is_automatic();
 	//__________________________________
-	void set_color(string c);
+	void set_color(const char *c);
 	string get_color() const;
 	void set_brand(string b);
 	string get_brand() const;
@@ -35,6 +37,11 @@ public:
 
 	Kettle();
 
-	Kettle(string a, string b, int c, int d, bool e);
+	Kettle(const char* a, string b, int c, int d, bool e);
+
+	Kettle(string a);
+
+
+	~Kettle();
 };
 

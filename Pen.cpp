@@ -48,14 +48,27 @@ void Pen::is_pen_full()
 
 }
 //__________________________________
-void Pen::set_color(string color)
+// 
+void Pen::set_color(const char* color)
 {
-	this->color = color;
+	if (this->color != nullptr) delete[] this->color;
+	int length = strlen(color) + 1;
+	this->color = new char[length];
+	strcpy_s(this->color, length, color);
 }
 string Pen::get_color() const
 {
-	return color;
+	return string(color);
 }
+
+//void Pen::set_color(string color)
+//{
+//	this->color = color;
+//}
+//string Pen::get_color() const
+//{
+//	return color;
+//}
 
 void Pen::set_material(string material)
 {
@@ -104,7 +117,7 @@ unsigned int Pen:: get_fullness() const
 
 Pen::Pen():Pen ("green","plastic", 160, true, 50){}
 
-Pen::Pen (string a, string b, double c, bool d, unsigned int e)
+Pen::Pen (const char*a, string b, double c, bool d, unsigned int e)
 {
 	set_color(a);
 	set_material(b);
@@ -118,4 +131,14 @@ Pen::Pen (string a, string b, double c, bool d, unsigned int e)
 void Pen::print() const
 {
 	cout << this-> color << "\n" << this-> material << "\n" << this-> cap << "\n" << this-> size << "\n" << this-> fullness << "\n";
+}
+
+Pen::~Pen()
+{
+	if (color != nullptr) delete[] color;
+}
+
+Pen::Pen(string a)
+{
+	set_material(a);
 }

@@ -9,36 +9,50 @@ using namespace std;
 
 int main()
 {
-	cout << "Class Pen\n";
+	cout << "Class Pen\n";	//////////////////////////
 	Pen a;
+	a.set_color("pink");
+	a.print();
+	/*Pen a;
 	a.print();
 	Pen b("red", "metal", 130, true, 40);
-	b.print();
+	b.print();*/
 
 	cout << "\n";
 
-	cout << "Class Table\n";
+	cout << "Class Table\n";	//////////////////////////
 	Table c;
+	c.set_color("orange");
+	c.print();
+
+	/*Table c;
 	c.print();
 	Table d("red", "metal", 120, 120, true);
-	d.print();
+	d.print();*/
 
 	cout << "\n";
 
-	cout << "Class Kettle\n";
+	cout << "Class Kettle\n";	//////////////////////////
 	Kettle e;
+	e.set_color("Yellow");
+	e.print();
+	/*Kettle e;
 	e.print();
 	Kettle f("gray", "Rowenta", 2, 2000, true);
-	f.print();
+	f.print();*/
 
 	cout << "\n";
 
-	cout << "Class Book\n";
+	cout << "Class Book\n";  //////////////////////////
 	Book g;
+	g.set_title("Lord of the rings");
+	g.print();
+
+	/*Book g;
 	g.print();
 	Book h("Lord of the rings", "J. R. R. Tolkien", 480, true, 1000000);
 	h.print();
-	cout << "\n";
+	cout << "\n";*/
 
 	HANDLE CCC = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleTextAttribute(CCC, 6);

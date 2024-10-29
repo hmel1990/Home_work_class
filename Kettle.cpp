@@ -37,13 +37,16 @@
 		SetConsoleTextAttribute(h, 15);
 	}
 	//__________________________________
-	void Kettle::set_color(string color)
+	void Kettle::set_color(const char*color)
 	{
-		this->color = color;
+		if (this->color != nullptr) delete[] this->color;
+		int length = strlen(color)+1;
+		this->color = new char [length];
+		strcpy_s(this->color, length, color);
 	}
 	string Kettle::get_color() const
 	{
-		return color;
+		return string (color);
 	}
 
 	void Kettle::set_brand(string brand)
@@ -87,7 +90,7 @@
 
 	Kettle::Kettle() :Kettle("gray", "Tefal", 1, 1500,true) {}
 
-	Kettle::Kettle(string a, string b, int c, int d, bool e)
+	Kettle::Kettle(const char *a, string b, int c, int d, bool e)
 	{
 		set_color(a);
 		set_brand(b);
@@ -101,4 +104,13 @@
 	void Kettle::print() const
 	{
 		cout << this->color << "\n" << this->brand << "\n" << this->capacity << "\n" << this->power << "\n" << this->automatic << "\n";
+	}
+	Kettle::~Kettle()
+	{
+		if (color != nullptr) delete[] color;
+	}
+
+	Kettle::Kettle(string a)
+	{
+		set_brand(a);
 	}

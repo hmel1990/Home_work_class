@@ -1,10 +1,12 @@
 #include <iostream>
 #include <windows.h>
+#include <cstring>
+
 using namespace std;
 
 class Table
 {
-	string color;
+	char* color = nullptr;
 	string material;
 	int width;
 	int height;
@@ -18,7 +20,7 @@ public:
 	void table_height();
 	void is_table_shelf();
 	//__________________________________
-	void set_color(string c);
+	void set_color(const char*a);
 	string get_color() const;
 	void set_material(string m);
 	string get_material() const;
@@ -33,5 +35,7 @@ public:
 
 	Table();
 
-	Table(string a, string b, int c, int d, bool e);
+	Table(const char* a, string b, int c, int d, bool e);
+	Table(string a);
+	~Table();
 };

@@ -1,10 +1,12 @@
 #include <iostream>
 #include <windows.h>
+#include <cstring>
+
 using namespace std;
 
 class Pen
 {
-	string color;
+	char* color = nullptr;
 	string material;
 	double size;
 	bool cap;
@@ -17,7 +19,7 @@ public:
 	void is_pen_cap();
 	void is_pen_full();
 	//__________________________________
-	void set_color(string c);
+	void set_color(const char* color);
 	string get_color() const;
 	void set_material(string m);
 	string get_material() const;
@@ -32,7 +34,9 @@ public:
 	
 	Pen();
 
-	Pen(string a, string b, double c, bool d, unsigned int e);
+	Pen(const char* a, string b, double c, bool d, unsigned int e);
+	Pen(string a);
+	~Pen();
 
 	//Pen (string a = "green", string b = "plastic", double c = 160, bool d = true, unsigned int e = 50);
 };

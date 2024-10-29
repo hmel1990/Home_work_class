@@ -40,14 +40,26 @@ void Table::is_table_shelf()
 
 }
 //__________________________________
-void Table::set_color(string color)
+void Table::set_color(const char* color)
 {
-	this->color = color;
+	if (this->color != nullptr) delete[] this->color;
+	int length = strlen(color) + 1;
+	this->color = new char[length];
+	strcpy_s(this->color, length, color);
 }
 string Table::get_color() const
 {
-	return color;
+	return string(color);
 }
+
+//void Table::set_color(string color)
+//{
+//	this->color = color;
+//}
+//string Table::get_color() const
+//{
+//	return color;
+//}
 
 void Table::set_material(string material)
 {
@@ -89,7 +101,7 @@ bool Table::get_shelf() const
 
 Table::Table() :Table("brown", "wood", 160, 100, true) {}
 
-Table::Table(string a, string b, int c, int d, bool e)
+Table::Table(const char* a, string b, int c, int d, bool e)
 {
 	set_color(a);
 	set_material(b);
@@ -101,4 +113,14 @@ Table::Table(string a, string b, int c, int d, bool e)
 void Table::print() const
 {
 	cout << this->color << "\n" << this->material << "\n" << this->width << "\n" << this->height << "\n" << this->shelf << "\n";
+}
+
+Table::~Table()
+{
+	if (color != nullptr) delete[] color;
+}
+
+Table::Table(string a)
+{
+	set_material(a);
 }

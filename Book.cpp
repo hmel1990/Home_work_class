@@ -38,13 +38,15 @@
 	}
 	//__________________________________
 
-	void Book::set_title(string title)
+	void Book::set_title(const char *title)
 	{
-		this->title = title;
+		if (this->title != nullptr) delete[] this->title;
+		int length = strlen(title)+1;
+		this-> title = new char[length];
+		strcpy_s(this->title, (length), title);
 	}
-	string Book::get_title() const
-	{
-		return title;
+	string Book::get_title() const {
+		return string(title);
 	}
 
 	void Book::set_author(string author)
@@ -88,7 +90,7 @@
 
 	Book::Book() :Book("1984", "George Orwell", 150, true, 9.99) {}
 
-	Book::Book(string a, string b, int c, bool d, float e)
+	Book::Book(const char * a, string b, int c, bool d, float e)
 	{
 		set_title(a);
 		set_author(b);
@@ -99,7 +101,19 @@
 
 
 
+
 	void Book::print() const
 	{
 		cout << this->title << "\n" << this->author << "\n" << this->pages << "\n" << this->cover << "\n" << this->price << "\n";
 	}
+
+	Book::~Book()
+	{
+		if(title != nullptr) delete[] title;
+	}
+
+	Book::Book(string a) 
+	{
+		set_author(a);
+	}
+	

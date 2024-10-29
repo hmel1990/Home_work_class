@@ -1,10 +1,11 @@
 #include <iostream>
 #include <Windows.h>
+#include <cstring>
 using namespace std;
 
 class Book
 {
-	string title;
+	char* title = nullptr;
 	string author;
 	int pages;
 	bool cover;
@@ -21,7 +22,7 @@ public:
 	void book_price();
 	//__________________________________
 
-	void set_title(string t);
+	void set_title(const char* t);
 	string get_title() const;
 	void set_author(string a);
 	string get_author() const;
@@ -36,7 +37,11 @@ public:
 
 	Book();
 
-	Book(string a, string b, int c, bool d, float e);
+	Book(const char* a, string b, int c, bool d, float e);
+	Book(string a);
+
+
+	~Book();
 };
 
 
