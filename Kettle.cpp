@@ -108,6 +108,8 @@
 	Kettle::~Kettle()
 	{
 		if (color != nullptr) delete[] color;
+		color = nullptr;
+
 	}
 
 	Kettle::Kettle(string a)

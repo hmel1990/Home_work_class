@@ -195,4 +195,5 @@
 	Car::~Car()
 	{
 		if (brand != nullptr) delete[] brand;
+		brand = nullptr;
 	}

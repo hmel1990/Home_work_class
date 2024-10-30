@@ -136,6 +136,7 @@ void Pen::print() const
 Pen::~Pen()
 {
 	if (color != nullptr) delete[] color;
+	color = nullptr;
 }
 
 Pen::Pen(string a)

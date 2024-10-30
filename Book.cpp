@@ -110,6 +110,8 @@
 	Book::~Book()
 	{
 		if(title != nullptr) delete[] title;
+		title = nullptr;
+
 	}
 
 	Book::Book(string a) 

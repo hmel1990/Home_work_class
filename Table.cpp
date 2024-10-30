@@ -118,6 +118,8 @@ void Table::print() const
 Table::~Table()
 {
 	if (color != nullptr) delete[] color;
+	color = nullptr;
+
 }
 
 Table::Table(string a)
