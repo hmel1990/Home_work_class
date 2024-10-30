@@ -43,7 +43,7 @@ public:
 	int get_mileage() const;
 
 
-	void print() const;
+	void print(int size) const;
 
 	Car();
 

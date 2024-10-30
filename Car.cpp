@@ -97,18 +97,11 @@
 	{
 		for (size_t i = 0; this->brand[i] != ""; i++)
 		{
-			cout << this->brand[i];
+			cout << this->brand[i]<<"\t";
 		}
 	}
 
-	/*void Car::set_brand(string brand)
-	{
-		this->brand = brand;
-	}
-	string Car::get_brand() const
-	{
-		return brand;
-	}*/
+
 
 	void Car::set_speed(int speed)
 	{
@@ -164,7 +157,7 @@
 
 	Car::Car() :Car("white") {}
 
-	Car::Car(string a) :Car(a, { "audi", "audi", "audi" }, 3) {}
+	Car::Car(string a) :Car(a, new string[3]{"audi", "audi", "audi"}, 3) {}
 
 	Car::Car(string a, string* b, int b1) :Car(a, b, b1, 200) {}
 
@@ -189,9 +182,13 @@
 
 
 
-	void Car::print() const
+	void Car::print(int size) const
 	{
-		cout << this->color << "\n" << this->brand << "\n" << this->speed << "\n" << this->electric << "\n" << this->doors << "\n" << this->fuel << "\n" << this->mileage << "\n";
+		cout << this->color << "\n" << this->speed << "\n" << this->electric << "\n" << this->doors << "\n" << this->fuel << "\n" << this->mileage << "\n";
+		for (int i = 0; i < size; i++)
+		{
+			cout << this->brand[i]<<"\t";
+		}
 	}
 
 
