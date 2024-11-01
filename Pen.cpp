@@ -124,6 +124,7 @@ Pen::Pen (const char*a, string b, double c, bool d, unsigned int e)
 	set_size(c);
 	set_cap(d);
 	set_fullness(e);
+	pen_count++;
 }
 
 
@@ -137,9 +138,24 @@ Pen::~Pen()
 {
 	if (color != nullptr) delete[] color;
 	color = nullptr;
+	pen_count--;
 }
 
 Pen::Pen(string a)
 {
 	set_material(a);
+}
+
+Pen::Pen(const Pen& original)
+{
+	set_color(original.color);
+	material = original.material;
+	size = original.size;
+	cap = original.cap;
+	fullness = original.fullness;
+}
+
+int Pen::get_count()
+{
+	return pen_count;
 }

@@ -38,4 +38,6 @@ public:
 	Table(const char* a, string b, int c, int d, bool e);
 	Table(string a);
 	~Table();
+
+	Table(const Table& original);
 };

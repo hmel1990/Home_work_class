@@ -6,6 +6,8 @@ using namespace std;
 
 class Pen
 {
+	static int pen_count;
+
 	char* color = nullptr;
 	string material;
 	double size;
@@ -13,6 +15,7 @@ class Pen
 	unsigned int fullness; //0-100
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 public:
+	static int get_count();
 	void pen_color();
 	void pen_material();
 	void pen_size();
@@ -39,5 +42,9 @@ public:
 	~Pen();
 
 	//Pen (string a = "green", string b = "plastic", double c = 160, bool d = true, unsigned int e = 50);
+
+	Pen(const Pen& original);
 };
+
+int Pen::pen_count = 0;
 

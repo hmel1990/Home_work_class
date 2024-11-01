@@ -43,5 +43,7 @@ public:
 
 
 	~Kettle();
+
+	Kettle(const Kettle& original);
 };
 

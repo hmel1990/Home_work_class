@@ -116,3 +116,12 @@
 	{
 		set_brand(a);
 	}
+
+	Kettle::Kettle(const Kettle& original) 
+	{
+		set_color(original.color);
+		brand = original.brand;
+		capacity = original.capacity;
+		power = original.power;
+		automatic = original.automatic;
+	}

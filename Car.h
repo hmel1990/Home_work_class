@@ -1,13 +1,18 @@
 #include <iostream>
 #include <windows.h>
 #include <cstring>
+#include <vector>
+
 
 using namespace std;
 
 class Car
 {
+	static int car_count;
 	string color;
-	string* brand = nullptr;
+	string brand;
+	string* brand_shop = nullptr;
+	int size;
 	int speed;
 	bool electric;
 	int doors;
@@ -16,6 +21,7 @@ class Car
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 	//__________________________________
 public:
+	static int get_count();
 	void car_color();
 	void car_brand();
 	void car_speed();
@@ -27,10 +33,18 @@ public:
 	void car_to_go();
 
 	//__________________________________
+
+	void set_size(int size);
+	int get_size() const;
+
+	vector<string>add_brand_shop() const;
+
 	void set_color(string c);
 	string get_color() const;
-	void set_brand(string* brand, int size);
-	string* get_brand(int size);
+	void set_brand(string b);
+	string get_brand() const;
+	void set_brand_shop(string* brand_shop, int size);
+	vector<string> get_brand_shop (int size) const;
 	void set_speed(int s);
 	int get_speed() const;
 	void set_electric(bool e);
@@ -49,21 +63,26 @@ public:
 
 	Car(string a);
 
-	Car(string a, string* b, int b1);
+	Car(string a, string b);
 
-	Car(string a, string* b, int b1, int c);
+	Car(string a, string b, string* c, int c1);
 
-	Car(string a, string* b, int b1, int c, bool d);
+	Car(string a, string b, string* c, int c1, int d);
 
-	Car(string a, string* b, int b1, int c, bool d, int e);
+	Car(string a, string b, string* c, int c1, int d, bool e);
 
-	Car(string a, string* b, int b1, int c, bool d, int e, int f);
+	Car(string a, string b, string* c, int c1, int d, bool e, int f);
 
-	Car(string a, string* b, int b1, int c, bool d, int e, int f, int g);
+	Car(string a, string b, string* c, int c1, int d, bool e, int f, int g);
 
-	void print_brand();
+	Car(string a, string b, string* c, int c1, int d, bool e, int f, int g, int h);
+
+	void print_brand_shop(int size);
 
 	~Car();
 
+	Car(const Car& original);
 };
+
+int Car::car_count = 0;
 

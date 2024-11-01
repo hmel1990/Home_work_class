@@ -126,3 +126,13 @@ Table::Table(string a)
 {
 	set_material(a);
 }
+
+Table::Table(const Table& original)
+{
+	set_color(original.color);
+	material = original.material;
+	width = original.width;
+	height = original.height;
+	shelf = original.shelf;
+}
+

@@ -42,6 +42,8 @@ public:
 
 
 	~Book();
+
+	Book(const Book& original);
 };
 
 

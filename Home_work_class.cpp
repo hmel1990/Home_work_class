@@ -46,8 +46,14 @@ int main()
 	SetConsoleTextAttribute(CCC, 6);
 	cout << "Class Car\n";
 	Car i;
-	string arr[] = { "Toyota", "Honda", "Ford" };
-	i.set_brand(arr, 3);
+	string arr[] = { "Nikolaev", "Chernovtsi", "Lutsk"};
+	i.set_brand_shop(arr, 3);
 	//i.print_brand();
 	i.print(3);
+
+	Pen x;
+	Pen y;
+	Pen z;
+	cout << Pen::get_count() << "\n"; 
+	
 }

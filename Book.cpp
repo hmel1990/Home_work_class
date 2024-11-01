@@ -119,3 +119,11 @@
 		set_author(a);
 	}
 	
+	Book::Book(const Book& original)
+	{
+		set_title(original.title);
+		author = original.author;
+		pages = original.pages;
+		cover = original.cover;
+		price = original.price;
+	}

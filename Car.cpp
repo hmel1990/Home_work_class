@@ -64,6 +64,24 @@
 
 	}
 	//__________________________________
+
+	void Car::set_size(int size)
+	{
+		if (size >= 0)
+		{
+			this->size = size;
+		}
+		else
+		{
+			throw "Ожидается целое число в диапазоне от 0 \n";
+		}
+	}
+
+	int Car::get_size() const	
+	{
+		return size;
+	}
+
 	void Car::set_color(string color)
 	{
 		this->color = color;
@@ -73,31 +91,53 @@
 		return color;
 	}
 
-	void Car::set_brand(string *brand, int size)
+	void Car::set_brand(string brand)
 	{
-		if (this->brand != nullptr) delete[] this->brand;		
-		this->brand = new string[size];
+		this->brand = brand;
+	}
+	string Car::get_brand() const
+	{
+		return brand;
+	}
+
+	void Car::set_brand_shop(string * brand_shop, int size)
+	{
+		if (this->brand_shop != nullptr) delete[] this->brand_shop;
+		this->brand_shop = new string[size];
 		for (int i = 0; i < size; i++)
 		{
-			this->brand[i] = brand[i];
+			this->brand_shop[i] = brand_shop[i];
 		}
 	}
 
-	string* Car::get_brand(int size)
+	vector <string> Car::get_brand_shop(int size) const
 	{	
-		string* temp = new string[size];
+		vector <string> temp;
 		for (int i = 0; i< size; i++)
 		{
-			temp [i] = this->brand[i];
+			temp.push_back(brand_shop[i]);
 		}
 		return temp;
 	}
+
+	//____________________________________________________________
+	vector<string> Car::add_brand_shop() const {
+
+		vector<string> temp;
 	
-	void Car::print_brand()
+		for (int i = 0; i < size; i++)
+
+			temp.push_back(brand_shop[i]);
+
+		return temp;
+
+	}
+
+	void Car::print_brand_shop(int size)
 	{
-		for (size_t i = 0; this->brand[i] != ""; i++)
+		for (size_t i = 0; i < size; i++)
 		{
-			cout << this->brand[i]<<"\t";
+			cout << this->brand_shop[i]<<"\t";
 		}
 	}
 
@@ -157,43 +197,74 @@
 
 	Car::Car() :Car("white") {}
 
-	Car::Car(string a) :Car(a, new string[3]{"audi", "audi", "audi"}, 3) {}
+	Car::Car(string a) :Car(a, "Toyota") {}
 
-	Car::Car(string a, string* b, int b1) :Car(a, b, b1, 200) {}
+	Car::Car(string a, string b) : Car(a, b, new string[3]{ "Odessa", "Kyiv", "Lviv" }, 3) {}
 
-	Car::Car(string a, string* b, int b1, int c) :Car(a, b, b1, c, true) {}
+	Car::Car(string a, string b, string* c, int c1) :Car(a, b, c, c1, 200) {}
 
-	Car::Car(string a, string* b, int b1, int c, bool d) :Car(a, b, b1, c, d, 4) {}
+	Car::Car(string a, string b, string* c, int c1, int d) :Car(a, b, c, c1, d, true) {}
 
-	Car::Car(string a, string* b, int b1, int c, bool d, int e) :Car(a, b, b1, c, d, e, 70) {}
+	Car::Car(string a, string b, string* c, int c1, int d, bool e) :Car(a, b, c, c1, d, e, 4) {}
 
-	Car::Car(string a, string* b, int b1, int c, bool d, int e, int f):Car(a, b,b1, c, d, e, f, 20000){}
+	Car::Car(string a, string b, string* c, int c1, int d, bool e, int f) :Car(a,b, c, c1, d, e, f, 70) {}
 
-	Car::Car(string a, string *b, int b1, int c, bool d, int e, int f, int g)
+	Car::Car(string a, string b, string* c, int c1, int d, bool e, int f, int g):Car(a, b, c, c1, d, e, f, g, 20000){}
+
+	Car::Car(string a, string b, string* c, int c1, int d, bool e, int f, int g, int h)
 	{
 		set_color(a);
-		set_brand(b,b1);
-		set_speed(c);
-		set_electric(d);
-		set_doors(e);
-		set_fuel(f);
-		set_mileage(g);
+		set_brand(b);
+		set_size(c1);
+		set_brand_shop (c,c1);
+		set_speed(d);
+		set_electric(e);
+		set_doors(f);
+		set_fuel(g);
+		set_mileage(h);
+		car_count++;
+
 	}
 
 
 
 	void Car::print(int size) const
 	{
-		cout << this->color << "\n" << this->speed << "\n" << this->electric << "\n" << this->doors << "\n" << this->fuel << "\n" << this->mileage << "\n";
+		cout << this->color<< "\n"<< this->brand << "\n" << this->speed << "\n" << this->electric << "\n" << this->doors << "\n" << this->fuel << "\n" << this->mileage << "\n";
 		for (int i = 0; i < size; i++)
 		{
-			cout << this->brand[i]<<"\t";
+			cout << this->brand_shop[i]<<"\t";
 		}
 	}
 
 
 	Car::~Car()
 	{
-		if (brand != nullptr) delete[] brand;
-		brand = nullptr;
+		if (brand_shop != nullptr) delete[] brand_shop;
+		brand_shop = nullptr;
+		car_count--;
+
+	}
+
+	Car::Car(const Car& original)
+	{
+		set_brand_shop(original.brand_shop,original.size);
+
+		for (int i = 0; i < size; i++)
+		{
+			brand_shop[i] = original.brand_shop[i];
+		}
+
+		color = original.color;
+		brand = original.brand;
+		speed = original.speed;
+		electric = original.electric;
+		doors = original.doors;
+		fuel = original.fuel;
+		mileage = original.mileage;
+	}
+
+	int Car:: get_count() 
+	{
+		return car_count;
 	}
