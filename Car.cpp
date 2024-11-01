@@ -228,9 +228,11 @@
 
 
 
-	void Car::print(int size) const
+	void Car::print() const												//печать всех полей класса
+
 	{
 		cout << this->color<< "\n"<< this->brand << "\n" << this->speed << "\n" << this->electric << "\n" << this->doors << "\n" << this->fuel << "\n" << this->mileage << "\n";
+		
 		for (int i = 0; i < size; i++)
 		{
 			cout << this->brand_shop[i]<<"\t";
@@ -238,24 +240,19 @@
 	}
 
 
-	Car::~Car()
+	Car::~Car()												//деструктор
 	{
 		if (brand_shop != nullptr) delete[] brand_shop;
 		brand_shop = nullptr;
 		car_count--;
-
 	}
 
 	Car::Car(const Car& original)
 	{
 		set_brand_shop(original.brand_shop,original.size);
 
-		for (int i = 0; i < size; i++)
-		{
-			brand_shop[i] = original.brand_shop[i];
-		}
-
 		color = original.color;
+		size = original.size;
 		brand = original.brand;
 		speed = original.speed;
 		electric = original.electric;

@@ -61,15 +61,6 @@ string Pen::get_color() const
 	return string(color);
 }
 
-//void Pen::set_color(string color)
-//{
-//	this->color = color;
-//}
-//string Pen::get_color() const
-//{
-//	return color;
-//}
-
 void Pen::set_material(string material)
 {
 	this->material = material;
@@ -155,7 +146,10 @@ Pen::Pen(const Pen& original)
 	fullness = original.fullness;
 }
 
+
+
 int Pen::get_count()
 {
 	return pen_count;
 }
+

@@ -21,7 +21,6 @@ class Car
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 	//__________________________________
 public:
-	static int get_count();
 	void car_color();
 	void car_brand();
 	void car_speed();
@@ -34,6 +33,7 @@ public:
 
 	//__________________________________
 
+	static int get_count();
 	void set_size(int size);
 	int get_size() const;
 
@@ -57,7 +57,7 @@ public:
 	int get_mileage() const;
 
 
-	void print(int size) const;
+	void print() const;
 
 	Car();
 

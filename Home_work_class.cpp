@@ -48,12 +48,19 @@ int main()
 	Car i;
 	string arr[] = { "Nikolaev", "Chernovtsi", "Lutsk"};
 	i.set_brand_shop(arr, 3);
-	//i.print_brand();
-	i.print(3);
+	i.print();
+
+	cout << "\n";
+	cout << "\n";
+
+	Car x(i);
+
+	x.print();
+
 
 	Pen x;
 	Pen y;
 	Pen z;
-	cout << Pen::get_count() << "\n"; 
-	
+	cout << Pen::get_count() << "\n";	
+
 }

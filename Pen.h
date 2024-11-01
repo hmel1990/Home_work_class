@@ -15,13 +15,13 @@ class Pen
 	unsigned int fullness; //0-100
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 public:
-	static int get_count();
 	void pen_color();
 	void pen_material();
 	void pen_size();
 	void is_pen_cap();
 	void is_pen_full();
 	//__________________________________
+	static int get_count();
 	void set_color(const char* color);
 	string get_color() const;
 	void set_material(string m);
