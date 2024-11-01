@@ -46,5 +46,4 @@ public:
 	Pen(const Pen& original);
 };
 
-int Pen::pen_count = 0;
 

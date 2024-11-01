@@ -1,4 +1,5 @@
 #include "Car.h"
+	int Car::car_count = 0;
 
 	void Car::car_color()
 	{

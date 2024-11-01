@@ -60,6 +60,10 @@ int main()
 
 	Pen y;
 	Pen z;
+	Pen yy;
+
+	cout << "\n";
+
 	cout << Pen::get_count() << "\n";	
 
 }

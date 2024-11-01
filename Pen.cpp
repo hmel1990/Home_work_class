@@ -1,4 +1,6 @@
 #include "Pen.h"
+int Pen::pen_count = 0;
+
 void Pen::pen_color()
 {
 	SetConsoleTextAttribute(h, 6);

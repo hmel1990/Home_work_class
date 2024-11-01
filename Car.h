@@ -84,5 +84,4 @@ public:
 	Car(const Car& original);
 };
 
-int Car::car_count = 0;
 
