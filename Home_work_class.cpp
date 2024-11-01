@@ -58,7 +58,6 @@ int main()
 	x.print();
 
 
-	Pen x;
 	Pen y;
 	Pen z;
 	cout << Pen::get_count() << "\n";	
