@@ -155,3 +155,41 @@ int Pen::get_count()
 	return pen_count;
 }
 
+ostream& operator << (ostream& os, const Pen& f)
+{
+	os << f.get_color() << "\n" << f.get_material() << "\n" << f.get_size() << "\n" << f.get_cap() << "\n" << f.get_fullness() << "\n";
+	return os;
+}
+
+istream& operator >> (istream& is, Pen& f)
+{
+	char b[255];
+
+	string c;
+
+	double g;
+	bool h;
+	unsigned int s;
+
+
+
+	cout << "Введите цвет: ";
+	is >> b;
+	cout << "Введите материал: ";
+	is >> c;
+	cout << "Введите размер: ";
+	is >> g;
+	cout << "Есть ли колпачек: ";
+	is >> h;
+	cout << "На сколько заполнена: ";
+	is >> s;
+
+
+	f.set_color(b);
+	f.set_material(c);
+	f.set_size(g);
+	f.set_cap(h);
+	f.set_fullness(s);
+
+	return is;
+}

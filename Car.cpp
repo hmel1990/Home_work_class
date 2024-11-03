@@ -217,3 +217,22 @@
 		return is;
 	}
 
+	bool Car::operator > (const Car& other) {
+		
+		return this->mileage > other.get_mileage(); 
+	}
+
+	bool Car::operator < (const Car& other) {
+
+		return this->mileage < other.get_mileage();
+	}
+
+	bool Car::operator == (const Car& other) {
+
+		return this->mileage == other.get_mileage();
+	}
+
+	bool Car::operator != (const Car& other) {
+
+		return this->mileage != other.get_mileage();
+	}

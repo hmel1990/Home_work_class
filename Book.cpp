@@ -127,3 +127,38 @@
 		cover = original.cover;
 		price = original.price;
 	}
+
+	ostream& operator << (ostream& os, const Book& f)
+	{
+		os << f.get_title() << "\n" << f.get_author() << "\n" << f.get_pages() << "\n" << f.get_cover() << "\n" << f.get_price() << "\n";
+		return os;
+	}
+
+	istream& operator >> (istream& is, Book& f)
+	{
+		char b[255];
+		string c;
+		int g;
+		bool h;
+		float s;
+
+		cout << "Введите название: ";
+		is >> b;
+		cout << "Введите автора: ";
+		is >> c;
+		cout << "Введите количество страниц: ";
+		is >> g;
+		cout << "Есть ли твердая обложка: ";
+		is >> h;
+		cout << "Введите цену: ";
+		is >> s;
+
+
+		f.set_title(b);
+		f.set_author(c);
+		f.set_pages(g);
+		f.set_cover(h);
+		f.set_price(s);
+
+		return is;
+	}

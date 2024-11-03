@@ -119,6 +119,7 @@ Table::Table(string a)
 	set_material(a);
 }
 
+
 Table::Table(const Table& original)
 {
 	set_color(original.color);
@@ -128,3 +129,39 @@ Table::Table(const Table& original)
 	shelf = original.shelf;
 }
 
+
+ostream& operator << (ostream& os, const Table& f)
+{
+	os << f.get_color() << "\n" << f.get_material() << "\n" << f.get_width() << "\n" << f.get_height() << "\n" << f.get_shelf() << "\n";
+	return os;
+}
+
+istream& operator >> (istream& is, Table& f)
+{
+	string c; 
+	int g, h;
+	bool s;
+
+
+	char b [255];
+
+	cout << "Введите цвет: ";
+	is >> b;	
+	cout << "Введите материал: ";
+	is >> c;
+	cout << "Введите ширину: ";
+	is >> g;
+	cout << "Введите длину: ";
+	is >> h;
+	cout << "Есть ли полка: ";
+	is >> s;
+
+
+	f.set_color(b);
+	f.set_material(c);
+	f.set_width(g);
+	f.set_height(h);
+	f.set_shelf(s);
+
+	return is;
+}

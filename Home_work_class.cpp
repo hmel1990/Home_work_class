@@ -9,6 +9,13 @@ using namespace std;
 
 int main()
 {
+	Car x_1;
+	Car y_2;
+	x_1.set_mileage(10000);
+	y_2.set_mileage(20000);
+	bool k = x_1 != y_2;
+	cout << k;
+
 	setlocale(0, "");
 	cout << "Class Pen\n";
 	Pen a;
@@ -20,8 +27,8 @@ int main()
 
 	cout << "Class Table\n";
 	Table c;
-	c.set_color("orange");
-	c.print();
+	cin >> c;
+	cout << c;
 
 
 
@@ -47,26 +54,12 @@ int main()
 	SetConsoleTextAttribute(CCC, 6);
 	cout << "Class Car\n";
 	Car i;
-	string arr[] = { "Nikolaev", "Chernovtsi", "Lutsk"};
-	i.set_brand_shop(arr, 3);
-	i.print();
-
-	cout << "\n";
-	cout << "\n";
-
-	Car x(i);
-
-	x.print();
-
-
-	Pen y;
-	Pen z;
-	Pen yy;
-
-	cout << "\n";
-
-	cout << Pen::get_count() << "\n";
 	cin >> i;
 	cout << i;
+
+	/*for (int i = 0; i < 10000000; i++)
+	{
+		Car t;
+	}*/
 
 }

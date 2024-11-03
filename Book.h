@@ -1,6 +1,8 @@
 #include <iostream>
 #include <Windows.h>
 #include <cstring>
+#include <vector>
+
 using namespace std;
 
 class Book
@@ -46,4 +48,6 @@ public:
 	Book(const Book& original);
 };
 
+ostream& operator << (ostream& os, const Book& f);
+istream& operator >> (istream& is, Book& f);
 

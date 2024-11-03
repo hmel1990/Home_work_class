@@ -57,8 +57,14 @@ public:
 
 	Car(const Car& original);
 
+	bool operator > (const Car& other);
+	bool operator < (const Car& other);
+	bool operator == (const Car& other);
+	bool operator != (const Car& other);
+
 };
 	ostream& operator << (ostream& os, const Car& f);
 	istream& operator >> (istream& is, Car& f);
+
 
 

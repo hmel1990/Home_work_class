@@ -1,6 +1,8 @@
 #include <iostream>
 #include <windows.h>
 #include <cstring>
+#include <vector>
+
 
 using namespace std;
 
@@ -45,5 +47,6 @@ public:
 
 	Pen(const Pen& original);
 };
-
+ostream& operator << (ostream& os, const Pen& f);
+istream& operator >> (istream& is, Pen& f);
 

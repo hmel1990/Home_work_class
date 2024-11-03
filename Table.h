@@ -1,6 +1,8 @@
 #include <iostream>
 #include <windows.h>
 #include <cstring>
+#include <vector>
+
 
 using namespace std;
 
@@ -40,4 +42,9 @@ public:
 	~Table();
 
 	Table(const Table& original);
+
+
 };
+
+ostream& operator << (ostream& os, const Table& f);
+istream& operator >> (istream& is, Table& f);

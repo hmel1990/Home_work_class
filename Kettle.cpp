@@ -125,3 +125,39 @@
 		power = original.power;
 		automatic = original.automatic;
 	}
+
+	ostream& operator << (ostream& os, const Kettle& f)
+	{
+		os << f.get_color() << "\n" << f.get_brand() << "\n" << f.get_capacity() << "\n" << f.get_power() << "\n" << f.get_automatic() << "\n";
+		return os;
+	}
+
+	istream& operator >> (istream& is, Kettle& f)
+	{
+		string c;
+		int g, h;
+		bool s;
+
+
+		char b[255];
+
+		cout << "Введите цвет: ";
+		is >> b;
+		cout << "Введите марку: ";
+		is >> c;
+		cout << "Введите объем: ";
+		is >> g;
+		cout << "Введите мощность: ";
+		is >> h;
+		cout << "Отключается ли автоматически: ";
+		is >> s;
+
+
+		f.set_color(b);
+		f.set_brand(c);
+		f.set_capacity(g);
+		f.set_power(h);
+		f.set_automatic(s);
+
+		return is;
+	}

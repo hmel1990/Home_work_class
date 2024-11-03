@@ -1,6 +1,7 @@
 #include <iostream>
 #include <windows.h>
 #include <cstring>
+#include <vector>
 
 using namespace std;
 
@@ -47,3 +48,5 @@ public:
 	Kettle(const Kettle& original);
 };
 
+ostream& operator << (ostream& os, const Kettle& f);
+istream& operator >> (istream& is, Kettle& f);
