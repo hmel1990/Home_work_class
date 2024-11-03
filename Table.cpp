@@ -52,14 +52,6 @@ string Table::get_color() const
 	return string(color);
 }
 
-//void Table::set_color(string color)
-//{
-//	this->color = color;
-//}
-//string Table::get_color() const
-//{
-//	return color;
-//}
 
 void Table::set_material(string material)
 {

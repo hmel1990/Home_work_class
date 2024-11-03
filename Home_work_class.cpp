@@ -9,6 +9,7 @@ using namespace std;
 
 int main()
 {
+	setlocale(0, "");
 	cout << "Class Pen\n";
 	Pen a;
 	a.set_color("pink");
@@ -64,6 +65,8 @@ int main()
 
 	cout << "\n";
 
-	cout << Pen::get_count() << "\n";	
+	cout << Pen::get_count() << "\n";
+	cin >> i;
+	cout << i;
 
 }
