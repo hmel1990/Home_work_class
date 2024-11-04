@@ -9,14 +9,24 @@ using namespace std;
 
 int main()
 {
-	Car x_1;
-	Car y_2;
-	x_1.set_mileage(10000);
-	y_2.set_mileage(20000);
-	bool k = x_1 != y_2;
-	cout << k;
-
 	setlocale(0, "");
+
+	Car x_1;
+	Car y_1;
+	x_1.set_mileage(10000);
+	y_1.set_mileage(20000);
+	bool k = x_1 != y_1;
+	cout << k;
+	cout << "\n";
+
+	Book x_2;
+	Book y_2;
+	x_2.set_pages(120);
+	y_2.set_pages(110);
+	bool k_2 = x_2 == y_2;
+	cout << k_2;
+	cout << "\n";
+
 	cout << "Class Pen\n";
 	Pen a;
 	a.set_color("pink");
@@ -30,23 +40,18 @@ int main()
 	cin >> c;
 	cout << c;
 
-
-
 	cout << "\n";
 
 	cout << "Class Kettle\n";
 	Kettle e;
-	e.set_color("Yellow");
-	e.print();
+	cout << e;
 
 
 	cout << "\n";
 
 	cout << "Class Book\n";
 	Book g;
-	g.set_title("Lord of the rings");
-	g.print();
-
+	cout << g;
 
 	cout << "\n";
 

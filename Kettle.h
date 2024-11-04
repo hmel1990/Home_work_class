@@ -46,6 +46,11 @@ public:
 	~Kettle();
 
 	Kettle(const Kettle& original);
+
+	bool operator > (const Kettle& other);
+	bool operator < (const Kettle& other);
+	bool operator == (const Kettle& other);
+	bool operator != (const Kettle& other);
 };
 
 ostream& operator << (ostream& os, const Kettle& f);

@@ -165,3 +165,27 @@ istream& operator >> (istream& is, Table& f)
 
 	return is;
 }
+
+bool Table::operator > (const Table& other)
+{
+
+	return this->width > other.get_width();
+}
+
+bool Table::operator < (const Table& other)
+{
+
+	return this->width < other.get_width();
+}
+
+bool Table::operator == (const Table& other)
+{
+
+	return this->width == other.get_width();
+}
+
+bool Table::operator != (const Table& other)
+{
+
+	return this->width != other.get_width();
+}

@@ -46,8 +46,15 @@ public:
 	~Book();
 
 	Book(const Book& original);
+
+	bool operator > (const Book& other);
+	bool operator < (const Book& other);
+	bool operator == (const Book& other);
+	bool operator != (const Book& other);
+
 };
 
 ostream& operator << (ostream& os, const Book& f);
 istream& operator >> (istream& is, Book& f);
+
 

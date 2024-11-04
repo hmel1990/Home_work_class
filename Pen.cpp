@@ -193,3 +193,28 @@ istream& operator >> (istream& is, Pen& f)
 
 	return is;
 }
+
+bool Pen::operator > (const Pen& other)
+{
+
+	return this->size > other.get_size();
+}
+
+bool Pen::operator < (const Pen& other)
+{
+
+	return this->size < other.get_size();
+}
+
+bool Pen::operator == (const Pen& other)
+{
+
+	return this->size == other.get_size();
+}
+
+bool Pen::operator != (const Pen& other)
+{
+
+	return this->size != other.get_size();
+}
+

@@ -162,3 +162,27 @@
 
 		return is;
 	}
+
+	bool Book::operator > (const Book& other)
+	{
+
+		return this->pages > other.get_pages();
+	}
+
+	bool Book::operator < (const Book& other)
+	{
+
+		return this->pages < other.get_pages();
+	}
+
+	bool Book::operator == (const Book& other)
+	{
+
+		return this->pages == other.get_pages();
+	}
+
+	bool Book::operator != (const Book& other)
+	{
+
+		return this->pages != other.get_pages();
+	}

@@ -43,6 +43,10 @@ public:
 
 	Table(const Table& original);
 
+	bool operator > (const Table& other);
+	bool operator < (const Table& other);
+	bool operator == (const Table& other);
+	bool operator != (const Table& other);
 
 };
 

@@ -161,3 +161,27 @@
 
 		return is;
 	}
+	bool Kettle::operator > (const Kettle& other)
+	{
+
+		return this->power > other.get_power();
+	}
+
+	bool Kettle::operator < (const Kettle& other)
+	{
+
+		return this->power < other.get_power();
+	}
+
+	bool Kettle::operator == (const Kettle& other)
+	{
+
+		return this->power == other.get_power();
+	}
+
+	bool Kettle::operator != (const Kettle& other)
+	{
+
+		return this->power != other.get_power();
+	}
+

@@ -46,6 +46,12 @@ public:
 	//Pen (string a = "green", string b = "plastic", double c = 160, bool d = true, unsigned int e = 50);
 
 	Pen(const Pen& original);
+
+	bool operator > (const Pen& other);
+	bool operator < (const Pen& other);
+	bool operator == (const Pen& other);
+	bool operator != (const Pen& other);
+
 };
 ostream& operator << (ostream& os, const Pen& f);
 istream& operator >> (istream& is, Pen& f);
