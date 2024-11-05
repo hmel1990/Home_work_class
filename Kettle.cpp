@@ -185,3 +185,16 @@
 		return this->power != other.get_power();
 	}
 
+
+	Kettle::operator string()
+
+	{
+
+		cout << "Casting from Kettle to string\n";
+
+		string result = brand + " " + color + " " + to_string(capacity) + " " + to_string(power);
+
+		return result;
+	}
+
+

@@ -1,6 +1,7 @@
 #include <iostream>
 #include <windows.h>
 #include <cstring>
+#include <string>
 #include <vector>
 
 using namespace std;
@@ -51,6 +52,9 @@ public:
 	bool operator < (const Kettle& other);
 	bool operator == (const Kettle& other);
 	bool operator != (const Kettle& other);
+
+	operator string();
+
 };
 
 ostream& operator << (ostream& os, const Kettle& f);

@@ -152,6 +152,8 @@
 
 	Car::~Car()												//деструктор
 	{
+		cout << "OPERATOR - destructor =\n";
+
 		if (brand_shop != nullptr) delete[] brand_shop;
 		brand_shop = nullptr;
 		car_count--;
@@ -159,7 +161,17 @@
 
 	Car::Car(const Car& original)							//конструктор копирования
 	{
-		set_brand_shop(original.brand_shop,original.size);
+		cout << "OPERATOR - constructor_copirovaniya =\n";
+
+		if (brand_shop != nullptr) delete[] brand_shop; 
+
+		brand_shop = new string[original.size];
+
+		for (int i = 0; i < original.size; i++)
+		{
+			brand_shop[i] = original.brand_shop[i];
+		}
+		//set_brand_shop(original.brand_shop,original.size);
 
 		size = original.size;
 		brand = original.brand;
@@ -239,4 +251,32 @@
 	{
 
 		return this->mileage != other.get_mileage();
+	}
+
+	Car::operator string()
+
+	{
+
+		cout << "Casting from Car to string\n";
+
+		string result = brand + " " + to_string(fuel) + " " + to_string(mileage);
+
+		for (int i = 0; i < size; i++) 
+		{
+			result += " " + brand_shop[i];
+		}
+
+		return result;
+	}
+
+	Car& Car::operator = (const Car& original)
+	{	
+		cout << "OPERATOR =\n";
+		if (this == &original) 
+		{
+			return *this;
+		}
+
+		Car::~Car();
+		Car::Car(original);
 	}

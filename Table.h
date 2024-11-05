@@ -1,6 +1,7 @@
 #include <iostream>
 #include <windows.h>
 #include <cstring>
+#include <string>
 #include <vector>
 
 
@@ -47,6 +48,8 @@ public:
 	bool operator < (const Table& other);
 	bool operator == (const Table& other);
 	bool operator != (const Table& other);
+	
+	operator string();
 
 };
 

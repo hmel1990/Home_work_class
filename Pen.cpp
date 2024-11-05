@@ -218,3 +218,15 @@ bool Pen::operator != (const Pen& other)
 	return this->size != other.get_size();
 }
 
+
+Pen::operator string()
+
+{
+
+	cout << "Casting from Pen to string\n";
+
+	string result = material + " " + color + " " + to_string(size) + " " + to_string(fullness);
+
+	return result;
+}
+

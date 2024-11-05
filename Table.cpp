@@ -189,3 +189,15 @@ bool Table::operator != (const Table& other)
 
 	return this->width != other.get_width();
 }
+
+Table::operator string()
+
+{
+
+	cout << "Casting from Table to string\n";
+
+	string result = material + " " + color + " " + to_string(width) + " " + to_string(height);
+
+	return result;
+}
+

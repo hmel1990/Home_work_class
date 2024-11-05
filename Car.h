@@ -2,6 +2,7 @@
 #include <windows.h>
 #include <cstring>
 #include <vector>
+#include <string>
 
 
 using namespace std;
@@ -61,6 +62,11 @@ public:
 	bool operator < (const Car& other);
 	bool operator == (const Car& other);
 	bool operator != (const Car& other);
+
+
+	operator string();
+
+	Car& operator= (const Car& original);
 
 };
 	ostream& operator << (ostream& os, const Car& f);

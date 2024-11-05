@@ -186,3 +186,16 @@
 
 		return this->pages != other.get_pages();
 	}
+
+
+	Book::operator string()
+
+	{
+
+		cout << "Casting from Book to string\n";
+
+		string result = author + " " + title + " " + to_string(pages) + " " + to_string(price);
+
+
+		return result;
+	}
