@@ -201,3 +201,13 @@ Table::operator string()
 	return result;
 }
 
+Table& Table:: operator = (Table const& original)
+{
+
+	if (this == &original) return*this;
+
+	set_color(original.color);
+	material = original.material;
+	width = original.width;
+	height = original.height;
+}

@@ -51,6 +51,9 @@ public:
 	
 	operator string();
 
+	Table& operator = (Table const& original);
+
+
 };
 
 ostream& operator << (ostream& os, const Table& f);

@@ -66,8 +66,8 @@ public:
 
 	operator string();
 
-	Car& operator= (const Car& original);
 
+	Car& operator= (const Car& original);
 };
 	ostream& operator << (ostream& os, const Car& f);
 	istream& operator >> (istream& is, Car& f);

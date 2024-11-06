@@ -55,6 +55,7 @@ public:
 
 	operator string();
 
+	Pen& operator = (Pen const& original);
 
 };
 ostream& operator << (ostream& os, const Pen& f);

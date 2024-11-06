@@ -230,3 +230,15 @@ Pen::operator string()
 	return result;
 }
 
+
+Pen& Pen:: operator = (Pen const& original)
+{
+
+	if (this == &original) return*this;
+
+	set_color(original.color);
+	material = original.material;
+	size = original.size;
+	fullness = original.fullness;
+}
+

@@ -55,6 +55,8 @@ public:
 
 	operator string();
 
+	Kettle& operator = (Kettle const& original);
+
 };
 
 ostream& operator << (ostream& os, const Kettle& f);

@@ -43,6 +43,7 @@
 
 	void Car::set_brand_shop(string * brand_shop, int size)
 	{
+		this->size = size;
 		if (this->brand_shop != nullptr) delete[] this->brand_shop;
 		this->brand_shop = new string[size];
 		for (int i = 0; i < size; i++)
@@ -152,7 +153,6 @@
 
 	Car::~Car()												//деструктор
 	{
-		cout << "OPERATOR - destructor =\n";
 
 		if (brand_shop != nullptr) delete[] brand_shop;
 		brand_shop = nullptr;
@@ -160,20 +160,9 @@
 	}
 
 	Car::Car(const Car& original)							//конструктор копирования
-	{
-		cout << "OPERATOR - constructor_copirovaniya =\n";
+	{	
+		set_brand_shop(original.brand_shop,original.size);
 
-		if (brand_shop != nullptr) delete[] brand_shop; 
-
-		brand_shop = new string[original.size];
-
-		for (int i = 0; i < original.size; i++)
-		{
-			brand_shop[i] = original.brand_shop[i];
-		}
-		//set_brand_shop(original.brand_shop,original.size);
-
-		size = original.size;
 		brand = original.brand;
 		fuel = original.fuel;
 		mileage = original.mileage;
@@ -190,7 +179,7 @@
 		{
 			os << f.get_brand_shop()[i] << "\t";
 		}
-
+		os << "\n";
 		return os;
 
 	}
@@ -276,7 +265,10 @@
 		{
 			return *this;
 		}
-
-		Car::~Car();
-		Car::Car(original);
+				
+		set_brand_shop(original.brand_shop, original.size);
+		brand = original.brand;
+		fuel = original.fuel;
+		mileage = original.mileage;
 	}
+

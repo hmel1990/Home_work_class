@@ -198,3 +198,13 @@
 	}
 
 
+	Kettle& Kettle:: operator = (Kettle const& original)
+	{
+
+		if (this == &original) return*this;
+
+		set_color(original.color);
+		brand = original.brand;
+		capacity = original.capacity;
+		power = original.power;
+	}

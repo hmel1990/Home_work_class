@@ -199,3 +199,15 @@
 
 		return result;
 	}
+
+	Book& Book:: operator = (Book const& original) 
+	{
+		
+		if (this == &original) return*this;
+
+		set_title(original.title);
+		author = original.author;
+		pages = original.pages;
+		cover = original.cover;
+		price = original.price;
+	}

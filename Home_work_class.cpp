@@ -11,29 +11,38 @@ int main()
 {
 	setlocale(0, "");
 
-	Car f;
+	/*Car f;
 	cout << (string)f << "\n"; 
 
 	Book b;
 	cout << (string)b << "\n";
 
 	Table c;
-	cout << (string)c << "\n";
+	cout << (string)c << "\n";*/
 
 
 	string arr[] = { "Lutsk", "Odessa", "Lviv" };
 
 	Car x;
-	cout << x;
-
 	x.set_brand_shop(arr, 3);
 
 
 	Car t;
 	cout << t; 
-
 	t = x;
-	cout << t; 
+	cout << t;
+
+	while (true)
+	{
+	cout << "\nBOOOK\n";
+	Book z;
+	z.set_title("Pushkin");
+	cout<< z<<"\n";
+	Book s;
+	cout<< s << "\n";
+	s = z;
+	cout << s << "\n";
+	}
 
 
 

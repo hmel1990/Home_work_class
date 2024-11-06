@@ -54,6 +54,8 @@ public:
 	bool operator != (const Book& other);
 
 	operator string();
+
+	Book& operator = (Book const& original);
 };
 
 ostream& operator << (ostream& os, const Book& f);
